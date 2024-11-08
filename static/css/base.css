@@ -107,4 +107,16 @@ body {
     body {
         height: calc(100vh - 116px);
     }
+
+    .navbar-mobile-bg {
+        background: #722F37;
+    }
+
+    .mb-text {
+        color: white !important;
+    }
+
+    .navbar li a {
+        padding: 0;
+    }
 }
