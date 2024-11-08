@@ -10,8 +10,18 @@ def all_wines(request):
 
     wines = Wine.objects.all()
     query = None
+    grape_type = None
+    current_country = None
 
     if request.GET:
+        if 'grape' in request.GET:
+            grape_type = request.GET['grape'].replace('_', ' ')
+            wines = wines.filter(grapes__iexact=grape_type)
+
+        if 'country' in request.GET:
+            current_country = request.GET['country'].replace('_', ' ')
+            wines = wines.filter(country__iexact=current_country) # __iexact means case insesitive
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -24,6 +34,8 @@ def all_wines(request):
     context = {
         'wines': wines,
         'search_term': query,
+        'selected_grape': grape_type,
+        'selected_country' : current_country,
     }
 
     return render(request, 'wines/wines.html', context)

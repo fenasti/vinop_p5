@@ -5,15 +5,14 @@
                 By Grape
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">Cabernet Sauvignon</a>
-                <a href="" class="dropdown-item">Chardonnay</a>
-                <a href="" class="dropdown-item">Tempranillo</a>
-                <a href="" class="dropdown-item">Merlot</a>
-                <a href="" class="dropdown-item">Pinot Gris</a>
-                <a href="" class="dropdown-item">Pinot Noir</a>
-                <a href="" class="dropdown-item">Sauvignon Blanc</a>
-                <a href="" class="dropdown-item">Syrah</a>
-                <a href="" class="dropdown-item">Zinfandel</a>
+                <a href="{% url 'wines' %}?grape=cabernet_sauvignon" class="dropdown-item">Cabernet Sauvignon</a>
+                <a href="{% url 'wines' %}?grape=chardonnay" class="dropdown-item">Chardonnay</a>
+                <a href="{% url 'wines' %}?grape=tempranillo" class="dropdown-item">Tempranillo</a>
+                <a href="{% url 'wines' %}?grape=merlot" class="dropdown-item">Merlot</a>
+                <a href="{% url 'wines' %}?grape=pinot_gris" class="dropdown-item">Pinot Gris</a>
+                <a href="{% url 'wines' %}?grape=pinot_noir" class="dropdown-item">Pinot Noir</a>
+                <a href="{% url 'wines' %}?grape=sauvignon_blank" class="dropdown-item">Sauvignon Blanc</a>
+                <a href="{% url 'wines' %}?grape=syrah" class="dropdown-item">Syrah</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -21,12 +20,12 @@
                 By Country
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Argentina</a>
-                <a href="" class="dropdown-item">France</a>
-                <a href="" class="dropdown-item">Italy</a>
-                <a href="" class="dropdown-item">New Zealand</a>
-                <a href="" class="dropdown-item">Spain</a>
-                <a href="" class="dropdown-item">USA</a>
+                <a href="{% url 'wines' %}?country=argentina" class="dropdown-item">Argentina</a>
+                <a href="{% url 'wines' %}?country=france" class="dropdown-item">France</a>
+                <a href="{% url 'wines' %}?country=italy" class="dropdown-item">Italy</a>
+                <a href="{% url 'wines' %}?country=new_zealand" class="dropdown-item">New Zealand</a>
+                <a href="{% url 'wines' %}?country=spain" class="dropdown-item">Spain</a>
+                <a href="{% url 'wines' %}?country=usa" class="dropdown-item">USA</a>
             </div>
         </li>
         <li class="nav-item dropdown">
