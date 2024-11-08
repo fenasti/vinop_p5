@@ -233,7 +233,7 @@
             "country": "France",
             "region": "Northern Rhone",
             "description": "Dedicated to the refinement and good taste of the Rhone Valley, this syrah will make even the harshest reviewer take note of its bright notes of fruit and lilac.",
-            "picture": "louis_cheze.jpg",
+            "picture": "calera.jpg",
             "price": 28.50
         }
     },
@@ -261,7 +261,7 @@
             "country": "France",
             "region": "Burgundy",
             "description": "Hints of honeysuckle and a light minerality make this chardonnay a perfect companion to a sunny day. Let its freshness bring a smile to your lips.",
-            "picture": "sylvain.jpg",
+            "picture": "capineto.png",
             "price": 27.00
         }
     },
@@ -271,11 +271,11 @@
         "fields": {
             "name": "GUSTAVE LORENTZ RIESLING RESERVE",
             "year": "2011",
-            "grapes": "Riesling",
+            "grapes": "Pinot Gris",
             "country": "France",
             "region": "Alsace",
             "description": "With a surprising sweetness that is balanced by a hint of acidity, this Riesling is a wonderful pre-dinner drink that can also complement a light fish dinner.",
-            "picture": "gustave.jpg",
+            "picture": "hugel.jpg",
             "price": 22.90
         }
     },
@@ -289,7 +289,7 @@
             "country": "New Zealand",
             "region": "Nelson",
             "description": "This Chardonnay will grab you with its toasty oak and buttery texture. A lovely way to end a day on a high note.",
-            "picture": "neudorf.jpg",
+            "picture": "ponzi.jpg",
             "price": 33.00
         }
     },
@@ -303,7 +303,7 @@
             "country": "New Zealand",
             "region": "Marlborough",
             "description": "Fresh and acidic, this wine captures the crisp taste of the best Sauvignon Blancs. Try with fresh oysters for an unforgettable experience.",
-            "picture": "dog_point.jpg",
+            "picture": "fourvines.jpg",
             "price": 21.80
         }
     },
@@ -313,11 +313,11 @@
         "fields": {
             "name": "MARQUES DE MURRIETA RESERVA",
             "year": "2005",
-            "grapes": "Tempranillo",
+            "grapes": "Cabernet Sauvignon",
             "country": "Spain",
             "region": "Rioja",
             "description": "This aged wine has a velvety finish with the slight hint of tobacco. Pair with grilled meats for a delectable experience.",
-            "picture": "murrieta.jpg",
+            "picture": "quivira.jpg",
             "price": 39.90
         }
     }
