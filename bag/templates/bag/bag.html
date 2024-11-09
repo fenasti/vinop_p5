@@ -48,7 +48,7 @@
                                         <p class="my-0">${{ item.wine.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form class="form update-form" method="POST" action="">
+                                        <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.wine_id %}">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -76,7 +76,7 @@
                                             </div>
                                         </form>
                                         <a class="update-link text-info"><small>Update</small></a>
-                                        <a class="remove-item text-danger float-right" id="remove_{{ wine.wine_id }}"><small>Remove</small></a>
+                                        <a class="remove-item text-danger float-right" id="remove_{{ item.wine_id }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.wine.price }}</p>
@@ -131,17 +131,20 @@
         form.submit();
     })
 
-    // Remove item and reload on click
     $('.remove-item').click(function(e) {
+        e.preventDefault();  // Prevent default action to ensure proper handling
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/bag/remove/${itemId}`;
+        var url = `/bag/remove/${itemId}/`;
         var data = {'csrfmiddlewaretoken': csrfToken};
 
         $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
+        .done(function() {
+            location.reload();
+        })
+        .fail(function(error) {
+            console.error("Error removing item:", error);
+        });
+    });
 </script>
 {% endblock %}
