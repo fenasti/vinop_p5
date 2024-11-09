@@ -10,15 +10,16 @@ def bag_contents(request):
     wine_count = 0
     bag = request.session.get('bag', {})
 
-    for wine_id, quantity in bag.items():
-        wine = get_object_or_404(Wine, pk=wine_id)
-        total += quantity * wine.price
-        wine_count += quantity
-        bag_items.append({
-            'wine_id': wine_id,
-            'quantity': quantity,
-            'wine': wine,      #render wine as a string instead of an object.
-        })
+    for wine_id, item_data in bag.items():
+        if isinstance(item_data, int):  
+            wine = get_object_or_404(Wine, pk=wine_id)
+            total += item_data * wine.price
+            wine_count += item_data
+            bag_items.append({
+                'wine_id': wine_id,
+                'quantity': item_data,
+                'wine': wine,
+            })
     
     context = {
         'bag_items': bag_items,
