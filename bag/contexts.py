@@ -17,7 +17,7 @@ def bag_contents(request):
         bag_items.append({
             'wine_id': wine_id,
             'quantity': quantity,
-            'wine': str(wine),      #render wine as a string instead of an object.
+            'wine': wine,      #render wine as a string instead of an object.
         })
     
     context = {
