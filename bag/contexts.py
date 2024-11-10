@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404
 from wines.models import Wine
 
 def bag_contents(request):
+    standard_delivery_percentage = 10
 
     bag_items = []
     total = 0
@@ -20,11 +21,17 @@ def bag_contents(request):
                 'quantity': item_data,
                 'wine': wine,
             })
-    
+
+    # Calculate delivery cost and grand total
+    delivery_cost = total * standard_delivery_percentage / 100 if total > 0 else 0
+    grand_total = total + delivery_cost
+
     context = {
         'bag_items': bag_items,
         'total': total,
         'wine_count': wine_count,
+        'delivery_cost': delivery_cost,
+        'grand_total': grand_total,
     }
 
     return context
