@@ -73,3 +73,33 @@ def add_wine(request):
     }
 
     return render(request, template, context)
+
+def edit_wine(request, wine_id):
+    """ Edit a wine in the store """
+    wine = get_object_or_404(Wine, pk=wine_id)
+    if request.method == 'POST':
+        form = WineForm(request.POST, request.FILES, instance=wine)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated wine!')
+            return redirect(reverse('wine_detail', args=[wine.id]))
+        else:
+            messages.error(request, 'Failed to update wine. Please ensure the form is valid.')
+    else:
+        form = WineForm(instance=wine)
+        messages.info(request, f'You are editing {wine.name}')
+
+    template = 'wines/edit_wine.html'
+    context = {
+        'form': form,
+        'wine': wine,
+    }
+
+    return render(request, template, context)
+
+def delete_wine(request, wine_id):
+    """ Delete a wine from the store """
+    wine = get_object_or_404(Wine, pk=wine_id)
+    wine.delete()
+    messages.success(request, 'Wine deleted!')
+    return redirect(reverse('wines'))
