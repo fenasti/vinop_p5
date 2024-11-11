@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    'https://git.heroku.com/vinop-p5.git',
+    'vinop-p5-65ef4c64b7a7.herokuapp.com',
     '8000-fenasti-vinopp5-a2z2rrf8wxo.ws.codeinstitute-ide.net',
 ]
 
