@@ -27,12 +27,22 @@
         </div>
     </div>
     <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-12 col-md-6 my-auto">
-                <div class="card bg-light mb-3 w-100">
-                    <div class="card-header">Header</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Subscribe to our newsletter</h5>
+        <div class="row rows h-100">
+            <div class="col-12 col-md-6 my-auto"> 
+                <div class="card cards bg-light mb-3 w-100">
+                    <div class="card-header cards-header">Exclusive Wine Club</div>
+                    <div class="card-body cards-body">
+                        <h5 class="card-title cards-title">Subscribe to our newsletter</h5>
+                        <p class="card-text cards-text">
+                            Stay up-to-date with our latest wine collections, special offers, and expert wine tips.
+                        </p>
+                        <ul>
+                            <li>Receive exclusive discounts on premium wines</li>
+                            <li>Be the first to know about new arrivals</li>
+                            <li>Get invited to special wine events and tastings</li>
+                            <li>Access to expert wine pairing guides and recommendations</li>
+                        </ul>
+                        <img class="card-img-bottom" src="{{ MEDIA_URL }}cata-vino.jpg" alt="Card image cap">
                         <div class="subscription-form">
                             {% include 'subscriptions/subscribe.html' %}
                         </div>
@@ -40,12 +50,16 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 my-auto">
-                <div class="card bg-light mb-3 w-100">
-                    <div class="card-header">Header</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Light card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
+                <div class="card cards bg-light mb-3 w-100">
+                    <h5 class="card-header cards-header">VinOp: Exclusive Wine Delivery</h5>
+                    <img class="card-img-top" src="{{ MEDIA_URL }}wine-line.jpg" alt="Card image cap">
+                    <p class="card-body cards-body">
+                        <strong>VinOp</strong> is an exclusive wine delivery app offering premium, hard-to-find wines and personalized subscription plans. Subscribers receive curated wine selections, limited editions, and food pairings, along with exclusive benefits like discounts and early access to new releases. 
+                        <br><br>
+                        The app also provides valuable wine knowledge, tasting tips, pairing guides, and virtual tastings. Users can easily order wines, track deliveries, and participate in events while enjoying promotions, flash sales, and referral rewards.
+                        <br><br>
+                        VinOp is designed for wine lovers of all levels, offering a seamless, educational, and enjoyable experience.
+                    </p>
                 </div>
             </div>
         </div>

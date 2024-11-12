@@ -14,6 +14,85 @@ body {
     width: 100%;
 }
 
+/* home cards */
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    height: 100%;  /* Ensure cards take up full height of their container */
+}
+
+.cards-body {
+    flex-grow: 1;  /* Makes sure the body grows to fill the available space */
+}
+
+.cards-header {
+    font-weight: bold;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.cards-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.cards-text {
+    font-size: 1rem;
+}
+
+.subscription-form {
+    margin-top: 1rem;
+}
+
+/* cards home */
+
+.rows {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Cards take equal space */
+    min-height: 300px; /* Sets a minimum height for the cards */
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.cards:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Shadow effect on hover */
+}
+
+.cards-header {
+    text-align: center;
+}
+
+.cards-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    flex-grow: 1; /* Ensure the body takes up all available space */
+    text-align: center;
+}
+
+.cards-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.cards-text {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
