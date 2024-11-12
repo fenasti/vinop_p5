@@ -3,11 +3,38 @@ html {
 }
 
 body {
+    /* display: flex;
+    flex-direction: column; */
     background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Roboto Mono', monospace;
+    
+}
+
+content-wrapperbody {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #555;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+}
+
+.content-wrapper {
+    flex: 1; /* Expands to take up remaining space, pushing footer down */
+    padding-top: 100px; /* Adjust for your fixed header height */
+}
+/* footer */
+
+footer {
+    background-color: #722F37;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
 }
 
 .card-sub {
@@ -311,6 +338,7 @@ input[name='q']::placeholder {
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
 }
+
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
