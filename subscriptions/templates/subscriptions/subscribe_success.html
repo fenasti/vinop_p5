@@ -15,19 +15,22 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">Thank You</h2>
+                <h2 class="logo-font mb-4">Thank You for Subscribing!</h2>
                 <hr>
-                <p class="text-black">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+                <p class="text-black">We're thrilled to have you on board! A confirmation email has been sent to <strong>{{ subscription.email }}</strong> with more details about your subscription.</p>
+                <p>Stay tuned for exciting updates, promotions, and offers coming your way soon!</p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12 col-lg-7">
                 <div class="order-confirmation-wrapper p-2 border">
-                    <h4>Sucess</h4>
+                    <h4>You're all set!</h4>
+                    <p>We appreciate your interest in staying updated with us. You're now part of our exclusive community. Be sure to check your inbox for more details!</p>
                 </div>
             </div>
         </div>
+        
         <div class="row">
 			<div class="col-12 col-lg-7 text-right">
                 {% if from_profile %}
@@ -42,7 +45,7 @@
                         <span class="icon mr-2">
                             <i class="fas fa-gifts"></i>
                         </span>
-                        <span class="text-uppercase">Keep looking</span>
+                        <span class="text-uppercase">Continue Exploring</span>
                     </a>
                 {% endif %}
 			</div>

@@ -15,9 +15,9 @@ def subscribe(request):
             _send_subscription_confirmation_email(subscription)
             messages.success(request, 'Thank you for subscribing!')
             return redirect('home')
-    else:
-        form = SubscriptionForm()
-    return render(request, 'subscriptions/subscribe_success.html', {'form': form})
+    # else:
+    #     form = SubscriptionForm()
+    # return render(request, 'subscriptions/subscribe_success.html', {'form': form})
 
 
 def _send_subscription_confirmation_email(subscription):
