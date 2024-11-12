@@ -17,7 +17,7 @@ def subscribe(request):
             
             # Success message and redirect to subscription success page
             messages.success(request, 'Thank you for subscribing!')
-            return redirect('subscription_success')  # Redirect to the subscription success page
+            return redirect('subscribe_success')  # Redirect to the subscription success page
         else:
             # If form is invalid, show error messages and render the same page (index.html)
             messages.error(request, 'There was an issue with your subscription. Please try again.')
@@ -49,4 +49,4 @@ def _send_subscription_confirmation_email(subscription):
 
 def subscription_success(request):
     # Render the success page with the subscription data
-    return render(request, 'subscriptions/subscription_success.html')
+    return render(request, 'subscriptions/subscribe_success.html')
