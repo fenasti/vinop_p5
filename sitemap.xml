@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/bag/</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/?grape=cabernet_sauvignon</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/?grape=chardonnay</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/?grape=tempranillo</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/?grape=merlot</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/?grape=pinot_gris</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/?grape=pinot_noir</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/?grape=sauvignon_blanc</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/?grape=syrah</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/?country=argentina</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/?country=france</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/?country=italy</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/?country=new_zealand</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/?country=spain</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/?country=usa</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/13</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/23</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/12</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/21</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/16</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/19</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/14</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/2</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/15</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/7</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/8</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/24</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/6</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/11</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/20</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/9</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/10</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/5</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/22</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/3</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/18</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/1</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/17</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vinop-p5-65ef4c64b7a7.herokuapp.com/wines/4</loc>
+  <lastmod>2024-11-12T21:27:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
