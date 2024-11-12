@@ -13,15 +13,8 @@ body {
     
 }
 
-content-wrapperbody {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #555;
-    font-family: 'Roboto Mono', monospace;
-    margin: 0;
+a {
+    text-decoration: none !important;
 }
 
 .content-wrapper {
@@ -31,7 +24,6 @@ content-wrapperbody {
 
 footer {
     /* background-color: #722F37; */
-    text-decoration: none;
     color: white;
     padding: 10px 0;
     text-align: center;
