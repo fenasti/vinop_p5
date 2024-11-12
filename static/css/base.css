@@ -26,12 +26,11 @@ content-wrapperbody {
 
 .content-wrapper {
     flex: 1; /* Expands to take up remaining space, pushing footer down */
-    padding-top: 100px; /* Adjust for your fixed header height */
 }
 /* footer */
 
 footer {
-    background-color: #722F37;
+    /* background-color: #722F37; */
     color: white;
     padding: 10px 0;
     text-align: center;
