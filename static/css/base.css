@@ -10,6 +10,10 @@ body {
     font-family: 'Roboto Mono', monospace;
 }
 
+.card-sub {
+    width: 100%;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;

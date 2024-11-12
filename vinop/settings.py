@@ -29,10 +29,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
+# 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     'vinop-p5-65ef4c64b7a7.herokuapp.com',
+    'localhost',
     '8000-fenasti-vinopp5-a2z2rrf8wxo.ws.codeinstitute-ide.net',
 ]
 
