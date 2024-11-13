@@ -280,6 +280,8 @@ The implementation of SEO was foundational to the creation of this project. Thro
 
 - Inclusion of `robots.txt` and `sitemap.xml` Files: Add `robots.txt` and `sitemap.xml` files at the root level of the project to guide search engine crawlers effectively and ensure all important pages are indexed.
 
+### Marketing Challenge
+
 #### 1. Who Are Your Users?
 
    - **Wine Enthusiasts**: People who are passionate about wine and want to explore unique varieties.

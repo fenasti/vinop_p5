@@ -1,4 +1,4 @@
-# Flamingo Terrace - Testing
+# VinOp - Testing
 
 <img src="static/readme/home-page.png">
 
@@ -12,9 +12,15 @@ Lighthouse testing showed relatively average performance optimization due to the
 
 <img src="static/readme/lighthouse.png">
 
+### Python
+
+[ CI Python linter ](https://pep8ci.herokuapp.com/) was used to test python code
+
+- No error besides variables longer than 79 caracters, non longer than 99.
+
 ## Manual Testing
 
-## Admin
+### Admin
 
 
 | Feature         | Test                         | Expected Result                                     | Actual Result |
@@ -25,7 +31,7 @@ Lighthouse testing showed relatively average performance optimization due to the
 | Access Admin Page | Accessing the admin page   | Successfully directs user to the admin interface   | Pass          |
 | View Orders     | Viewing order details        | Successfully displays order details for review     | Pass          |
 
-## User
+### User
 
 
 | Feature                    | Test               | Expected Result                 | Actual Result           |
@@ -44,9 +50,7 @@ Lighthouse testing showed relatively average performance optimization due to the
 | Newsletter unsubscribe | Unsubscribing to the newsletter  | User cant unsubscribe from the newsletter manually | Fail   |
 | User Profile    | Viewing user profile     | Displays user information and past orders       | Pass          |
 
-## Links testing
-
-Here’s the updated table, now tailored specifically for your wine project:
+### Links testing
 
 | Feature  | Test      | Expected Result   | Actual Result |
 |--------|-----------------|-----------------|------------|
@@ -73,15 +77,15 @@ Here’s the updated table, now tailored specifically for your wine project:
 
 ## Error handling
 
-- When there is an error in the form submission, a modal is displayed with the error message.
+- When there is an error a modal is displayed with the error message.
 
-<img src="static/images/readme/error-modal.png">
+<img src="static/readme/error-modal.png">
 
-- The form doesn't accept blank fields or spaces.
+- When an user enters manually or inderectly to a non existing or broken url a custom error webpage is shown.
 
-<img src="static/images/readme/requested-message.png">
+<img src="static/readme/error-handler.png">
 
-### Testing was performed on the following devices:
+## Testing was performed on the following devices:
 
 * Laptop:
   * Macbook Air 2018
@@ -89,7 +93,7 @@ Here’s the updated table, now tailored specifically for your wine project:
   * iPhone 13 pro
   * Xiaomi 11T pro
 
-### Each device tested the site using the following browsers:
+## Each device tested the site using the following browsers:
 
 * Google Chrome
 * Safari
