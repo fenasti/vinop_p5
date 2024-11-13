@@ -163,36 +163,27 @@ The checkout page is accessed from the bag contents and provides all the necessa
 
 ### Footer
 
-<img src="static/readme/subscription-success.png">
+<img src="static/readme/footer-home.png">
+<img src="static/readme/footer.png">
+
+Displays information about the associated partners, details from the owners, a link to the site’s policies, and links to social media.
 
 ### Profile
 
-<img src="static/readme/subscription-success.png">
+On the profile page, the user can view their shipping details, details of previous orders, and access all sign-in, login, and other authentication features provided by django-allauth.
 
+<img src="static/readme/profile.png">
+<img src="static/readme/signin.png">
 
+Additionally, if the user is authenticated as a superuser, they have direct access to all CRUD functionality from the webpage.
 
+<img src="static/readme/manager-crud.png">
 
-The approval of the reservation is made by the admin in the adminpage by the checklist approved model field and it shows the reservation now without the fade class. The metadata in the **ReservationRequest** model gives all the neccesary information to contact the client back and to schedule the requested datetime.
+### Error
 
-<img src="static/images/readme/admin-reservetion-meta.png">
-<img src="static/images/readme/reservation-aproval.png">
+A custom error handler is implemented for all errors recognized by Django, ensuring that the webpage doesn’t crash due to URL misdirection.
 
-I decided to use the Comment model's base relationship from the walkthrough blog project and adapt it to only display reservations to the logged-in user. Permission for editing and deleting reservations is also restricted to users, and these actions are only possible if the user is logged in.
-
-<img src="static/images/readme/reservation-edit.png">
-<img src="static/images/readme/delete-modal.png">
-
-| Field             | Type                 |
-|:-----------------:|:--------------------:|
-| client            | ForeignKey(User)     |
-| email             | EmailField           |
-| details           | TextField            |
-| reservation_date  | DateField            |
-| reservation_time  | TimeField            |
-| created_on        | DateTimeField        |
-| approved          | BooleanField         |
-
-The only relation is with the user that is named as client, if this is deleted, all the reservations related to the client will be erased on cascade  afterwards.
+<img src="static/readme/error-page.png">
 
 ## Technologies
 
@@ -204,9 +195,11 @@ The only relation is with the user that is named as client, if this is deleted, 
 - [Django](https://www.djangoproject.com/)
 - [Bootstrap](https://getbootstrap.com/)
 
-### Main packages in the requirements.txt file
+### Database
 
-- Cloudinary: used for managing media (like images) in Django projects.
+All database-related media and static files are stored and managed in an AWS S3 bucket. This setup provides reliable, long-term access to the files, ensuring they are securely hosted and easily accessible for the application.
+
+### Main packages in the requirements.txt file
 
 - Dj-database-url: used for deployment to Heroku.
 
@@ -214,13 +207,15 @@ The only relation is with the user that is named as client, if this is deleted, 
 
 - Django-crispy-forms: A Django package that helps with creating dynamic and styled forms
 
-- Django-summernote: Editor for the Django admin that allows rich-text editing.
+- Boto3: Allowing the application to interact with AWS services like S3 for file storage.
+
+- Pillow: A Python Library that allows image processing within Django applications.
 
 - Gunicorn: Python translator for running Django applications in production environments.
 
 - Psycopg: A PostgreSQL adapter for Python, allowing Django to interact with a PostgreSQL database.
 
-- Whitenoise: A middleware that helps serve static files directly from Django in production environments like Heroku.
+- Stripe: Enable payment processing for purchases.
 
 ## Testing
 
@@ -228,34 +223,21 @@ Please refer to [TESTING.md](TESTING.md)
 
 ## Problems / Bugs
 
-### #1
-The first problem i had after trying the early deploymnet was that i was using the wrong name project in the Procfile. I was using a previous project name as a copy-paste way without realizing the importance of the path
+### Bug 1
 
-### #2
-After installing Postgress and migrate the changes of the first model formulated, i faced another bug wich took me a lot of time to solve, until i added the 8000 port to the CSRF_TRUSTED_ORIGINS besides the ALLOWED_HOSTS.
+During development, I implemented some aesthetic features that unexpectedly caused the page to render incorrectly. The layout appeared broken, as if the CSS were only partially applied. After extensive debugging and even rolling back recent commits, suspecting I had broken the display, I still couldn’t find the issue. Finally, I opened the project in Opera and saw everything displaying correctly. Realizing it was a cache issue, I cleared the cached files from Google Chrome, and the page appeared as intended.
 
-### #3
-When creating the superuser and migrate the first modelof Django, I deployed the project to Heroku and an "Internat Server Error" was shown. I solved it providing a SECRET_KEY variable to the Vars settings in Heroku.
+### Bug 2
 
-### #4
-I couldn't visualize the view of my Home model, this was because the template provided in the class view of the index app was not written as a relative path.
-
-### #5
-After a whole day trying to implement the callendar input i decided to come back to the main stage using the command **"git log"** to view my later logs and as i didn't commit during the whole time because there were no succesfull stages, i used the command **"git checkout --."** and came back to the previous stage.
-First i tried to use an extension called Tempus Dominus but it was too complicated to install thru all the JavaScript and all the metadata needed. The main problem was that afer to be able to show a callendar input, the data was given all date and time together and somehow the default format couldn't accept it in any way i tried, even changing the default format to many different acceptance criterias.
-After returning to the previous stage i decided to separate the specifications input to both time and date respectively separated and combine them afterwards to use them as the database reservation_datetime object required.
-
-<img src="static/images/readme/date-picker.png">
+The media files weren’t loading from AWS, so I reached out to my tutor for assistance. Together, we investigated and eventually realized the issue was due to incorrect permissions settings. I decided it would be best to start from scratch. During the process, I discovered that I hadn’t enabled public access for the created users, which was causing the problem.
 
 ## Future implementations
 
-As shown in my Agile project board there were 3 functions that were way out of my knowledge to implement.
+- Create various paid subscription options offering benefits for different durations and price levels.
+  
+- Allow registered users to rate wines, with ratings displayed as a feature on each wine.
 
-- An automatic response when the reservation is possible due a callendar which has all the schedulled reservations and which can provide inmediate response when a spot is free or taken.
-
-- Email confirmation with an autogenerated template with the details of the reservation that is sended to the client mail adress.
-
-- A Google maps API that shows the exact location of the restaurant in the about page.
+- Provide a personalized wine list based on each user’s order history.
 
 ## Deployment
 
@@ -267,34 +249,104 @@ As shown in my Agile project board there were 3 functions that were way out of m
 
 - Create the Procfile.
 
-- Add any variable required in the var setting in Heroku as the password or the postgress url.
+- Add any variable required in the var setting in Heroku.
 
 - Use collect static for deployments when debug is set to False.
 
 - Manually deploy from the branch in the Deploy link from the app.
 
+## Marketing
+
+### Keyword Challenge
+
+<img src="static/readme/k1.jpeg">
+<img src="static/readme/k2.jpeg">
+<img src="static/readme/k3.jpeg">
+<img src="static/readme/k4.jpeg">
+<img src="static/readme/k5.jpeg">
+
+
+The implementation of SEO was foundational to the creation of this project. Through the keyword challenge, I defined the concepts and content the application needed to include, and from there, I began planning all the processes. SEO is present in:
+
+- Meta Tags in `base.html`: Include well-defined meta tags, specifically *keywords* and *description*, to improve SEO and provide search engines with relevant content descriptions.
+
+- Descriptive Title: Use a precise and descriptive title that clearly reflects the page’s content, making it easily identifiable and appealing in search engine results.
+
+- Strategic Use of Keywords: Select and integrate relevant keywords throughout the content elements of the project to optimize for search engine relevance.
+
+- Addition of External Links: Incorporate links to reputable, established websites related to the world of wine to enhance credibility and provide users with valuable resources.
+
+- Alt Attributes for Images: Implement "alt" attributes on all images, both to improve accessibility for users and to enhance SEO by providing search engines with context about the visual content.
+
+- Inclusion of `robots.txt` and `sitemap.xml` Files: Add `robots.txt` and `sitemap.xml` files at the root level of the project to guide search engine crawlers effectively and ensure all important pages are indexed.
+
+#### 1. Who Are Your Users?
+
+   - **Wine Enthusiasts**: People who are passionate about wine and want to explore unique varieties.
+   - **Gift Shoppers**: Users looking to gift a subscription or unique wine selection.
+   - **Eco-Conscious Shoppers**: Consumers interested in biodynamic, organic, and natural wines.
+   - **Busy Professionals**: Individuals who value convenience and appreciate curated experiences.
+   - **Beginner Wine Drinkers**: Those interested in learning about wine but unsure where to start.
+
+#### 2. Which Online Platforms Would You Find Lots of Your Users?
+
+   - **Instagram**: Wine imagery and food-pairing posts perform well here. It’s visual and allows to showcase the lifestyle element.
+   - **Facebook**: Useful for a slightly older demographic.
+   - **YouTube**: Ideal for sharing educational content about wine selection, pairing, and tasting tips.
+   - **Pinterest**: Many users search here for wine-pairing ideas, gift options, and lifestyle content.
+
+#### 3. Would Your Users Use Social Media? If Yes, Which Platforms Do You Think You Would Find Them On?
+
+   - **Instagram and Pinterest** for visual appeal and lifestyle content.
+   - **YouTube** for educational wine content and wine tasting.
+   - **Facebook** for targeted ads and community-driven approach, including wine interest groups.
+
+#### 4. What Do Your Users Need? Could You Meet That Need with Useful Content? If Yes, How Could You Best Deliver That Content to Them?
+
+   - **Wine Education**: Beginners and enthusiasts alike appreciate wine-tasting tips, food pairings, and information on organic/biodynamic wines.
+   - **Discovery of New Wines**: Users want to know they’re trying unique or quality selections not found in local stores.
+   - **Convenient Purchasing Options**: Subscriptions with flexible delivery times and personalized choices.
+   - **Blog Articles**: Create blog posts on topics like “Top Biodynamic Wines Explained” or “How to Taste Wine Like a Sommelier.”
+   - **Social Media Posts**: Share wine-pairing ideas, looks at vineyards and customer stories.
+   - **Email Newsletters**: “Wine of the Month” highlights", tips and exclusive subscriber-only content.
+   - **Educational YouTube Videos**: Short videos explaining topics.
+
+#### 5. Would Your Business Run Sales or Offer Discounts? How Do You Think Your Users Would Most Like to Hear About These Offers?
+
+   - **Email Newsletters**: Use these for exclusive subscriber discounts, seasonal offers, or special holiday promotions.
+   - **Social Media Announcements**: Post about discounts on Instagram and Facebook, where they’re easy to share.
+   - **Website Pop-Up or Banner**: Include a pop-up on your landing page promoting limited-time discounts.
+   - **Loyalty Program or Referral Discounts**: Consider offering discounts to users who refer friends or who consistently order.
+
+#### 6. What Are the Goals of Your Business? Which Marketing Strategies Would Offer the Best Ways to Meet Those Goals?
+
+   - **Building Brand Awareness**: Create a presence on social media, focusing on customer engagement.
+   - **Growing Subscriptions**: Use targeted ads, email marketing, and referral incentives to attract subscribers.
+   - **Positioning as an Authority in Wine**: Publish expert content, collaborate with sommeliers, and partner with reputable wine influencers or blogs.
+   - **Content Marketing**: Focus on SEO-optimized blog posts and educational social media content.
+   - **Email Marketing**: Regular, value-added newsletters with wine tips, discounts, and referral bonuses.
+   - **Influencer Partnerships**: Work with wine influencers or bloggers for authentic reviews or unboxings.
+   - **Paid Ads**: Consider Facebook and Instagram ads, targeting users with interests in wine or gourmet products.
+
+#### 7. Would Your Business Have a Budget to Spend on Advertising? Or Would It Need to Work with Free or Low-Cost Options to Market Itself?
+
+   - **Low Budget**: Focus on organic reach through SEO, blog content, social media engagement, and email newsletters.
+   - **Moderate Budget**: Use targeted ads on Instagram and Facebook. Run seasonal campaigns.
+   - **Higher Budget**: Consider Google Ads for keywords like “wine subscription” or “unique wines delivered.” Invest in high-quality video content or branded collaborations.
+
 ## Credits
 
-### Tutorials
-
-- https://www.youtube.com/watch?v=pEwA4-Mmnj8
-
-- https://djangotricks.blogspot.com/2019/10/working-with-dates-and-times-in-forms.html
-
-- https://getbootstrap.com/docs/5.3/getting-started/introduction/
-Basically all the documentation created by the Bootstrap comunity is very useful and gentle for the user.
+I reused some code snipets of Boutique-Ado and my previous project Flamingo Terrace.
 
 ### Inspirational projects
 
 - https://github.com/kera-cudmore/TheQuizArms?tab=readme-ov-file#testing
 
-- https://github.com/markdaniel1982/MD82-P4/tree/main
+- https://github.com/pauline-rugwevera/ecommerce-pp5/blob/main/README.md
 
-- Of course the Codestar Blog project provided by Code Institute wich was very fun to make and understand.
+- Of course the Boutique-Ado project provided by Code Institute.
 
-- https://crumber.com
-I'm not quite sure how I came across this webpage, but its simplicity served as great inspiration for the design of this project.
+- https://cav.cl/
+An established online shop pioneering wine subscriptions, offering various subscription options that include curated wine boxes along with one of the most renowned gourmet magazines in Chile.
 
-- https://www.rolls-berlin.de
-An example of a real restaurant webpage, as a curious fact i worked with the owners of this business and they are beautiful people and they serve delicious food.
-
+- https://winebox.es/
