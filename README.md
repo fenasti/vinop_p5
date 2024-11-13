@@ -16,7 +16,7 @@ This project envisions an e-commerce platform tailored for a B2C audience, desig
 
 I initially entered the wine color into a palette mixer software, which revealed a light blue shade that paired beautifully with the default black and white planned for the project. The combination of red, white, and blue immediately evoked the colors of the French flag, a well-known symbol of a prominent wine-producing country. This led to the decision to use a blue-focused background image on the homepage.
 
-Thus, the choice for a homepage background became clear: a blue-focused image that aligns beautifully with the black and white design elements, creating an ambiance that is both visually cohesive and culturally resonant. This color scheme not only grounds the site in elegance but also gives visitors an intuitive association with the tradition and quality embedded in the wine world.
+Thus, the choice for a homepage background became clear: a blue-focused image that aligns with the black and white design elements, creating an ambiance that is both visually cohesive and culturally resonant. This color scheme not only grounds the site in elegance but also gives visitors an intuitive association with the tradition and quality embedded in the wine world.
 
 <img src="static/readme/color-pallete.png">
 
@@ -58,73 +58,102 @@ The first step is to identify and define the key data entities necessary for the
 
 ### Agile
 
+#### **User-Centric Stories**
+
+- **Browse Wines:**  
+  *"As a user i want to browse a selection of wines so I can explore what’s available."*
+
+- **Wine Details:**  
+  *"As a user i want to view detailed information about each wine so I can make an informed choice."*
+
+- **Filter and Search:**  
+  *"As a user i want to filter wines by type and region to find what suits my preferences."*
+
+- **Subscription Options:**  
+  *"As a user i want to see different subscription plans so I can choose the one that fits my needs."*
+
+- **Subscribe to a Plan:**  
+  *"As a user i want to subscribe to a wine plan so I receive curated wines and offers at my chosen frequency."*
+
+- **Add to Cart:**  
+  *"As a user i want to add wines to a shopping cart so I can buy multiple items at once."*
+
+- **Review Cart:**  
+  *"As a user i want to view and edit my cart before proceeding to checkout."*
+
+- **Checkout and Payment:**  
+  *"As a user i want to securely pay for my order and receive a confirmation."*
+
+- **Order History:**  
+  *"As a user i want to see my previous orders so I can track what I’ve purchased."*
+
+- **Manage Subscription:**  
+  *"As a user i want to manage my subscription plans"*
+
+- **Receive Order Confirmation:**  
+  *"As a user i want an email confirmation after each purchase so I know my order went through."*
+
+- **User Profile:**  
+  *"As a user i want to manage my account details and address for delivery purposes."*
+
+#### **Admin-Centric Stories**
+
+- **Manage Products:**  
+  *"As an owner i want to add, edit, or remove wines in the catalog."*
+
+- **Order Management:**  
+  *"As an owner i want to view and manage customer orders to ensure smooth delivery."*
+
+- **Send Promotions:**  
+  *"As an owner i want to send promotional emails to users to encourage more subscriptions and purchases."*
+
+https://github.com/users/fenasti/projects/4
+
+## Features
+
+### App Structure Overview
+
+| **App**             | **Purpose**                                           | **Core Models**              | **Key Functionalities**                         |
+|---------------------|-------------------------------------------------------|------------------------------|-------------------------------------------------|
+| **Wines**           | Manages wine catalog                                  | `Wine`          | Browse wines, filter by category or grape type  |
+| **Subscriptions**   | Handles subscription and storage emails     | `Subscription` | Subscription to newsletter      |
+| **Bag**            | Manages user cart functionality                       | N/A (session-based)          | Add to cart, view cart, update quantity         |
+| **Checkout**        | Processes payments and manages orders                 | `Order`, `OrderItem` | Order creation, payment processing            |
+| **Profiles**        | Manages user profiles and authentication              | `UserProfile`                | User registration, order history |
+| **Home**      | Renders home-page |  | Displays email subscription form and main content |
+
+### Home
+
+<img src="static/readme/mobile-home.png">
+
+The homepage features the main image with a direct link to the full wine selection. At the bottom, there are two cards: one with a subscription form for the newsletter and the other providing information about the site.
+
+<img src="static/readme/home-cards.png">
+
+<img src="static/readme/home-sub.png">
+
+### All wines
+
+<img src="static/readme/all-wines.png">
+
+Displays all wines in the database, with sorting functionality and the ability to show search results on the same page.
+
+<img src="static/readme/nav-sort.png">
+<img src="static/readme/search.png">
+
+### Wine details
+
+<img src="static/readme/wine-details.png">
+
+Renders the specific wine selected by clicking the image, showing more details, a description, and the option to add it to the bag.
+
+### Subscription
+
+<img src="static/readme/subscription-success.png">
 
 
-https://github.com/users/fenasti/projects/2
 
-### Process
 
-The first steps of creating the Django project where very straight forward.
-
-In order:
-- Run the repository in gitpod with the providen template.
-
-- Install Django using the pip command: **pip install django**.
-
-- Create a New Django Projec using: **django-admin startproject (in this case "restaurant")** and make the fisrt migration.
-
-- Connect to postgress with the provided database url in the env.py file and in the same way providing the url into the config vars from Heroku.
-
-- Provide the dev enviroment url in the ALLOWED_HOST variable in settings allong with the Heroku url.
-
-- Create the requirements.txt file, create the path in the Procfile using gunicorn and freeze the installed apps.
-
-- Now is possible to create the Superuser using: **python3 manage.py createsuperuser**
-
-- Migrate the changes and now is the moment to start creating the django apps.
-
-### Apps
-
-To create an app in Django, the process is always the same. It starts with the command:
-**python3 manage.py startapp (app name)**
-Next, you need to register the app in the INSTALLED_APPS section of the settings.py file.
-
-#### Development Steps:
-Model Creation: Begin by defining your models in models.py. This is the foundation of your app's data structure.
-
-View Code: Write the necessary view logic in views.py to handle requests and return responses.
-
-URL Configuration: Create a urls.py file within your app (it doesn’t come by default) to define the URL patterns for your views.
-
-Template Setup: Implement the URLs in the base.html template and create the respective HTML templates in the appropriate templates folder. These templates will be rendered from your views.
-
-Migrate any new changes and use the makemigrations command.
-
-#### Forms:
-To handle forms within your app, start by creating a forms.py file. Define your forms as classes that accept model fields as requirements.
-
-<img src="static/images/readme/reservtions-page.png">
-
-#### Admin Registration:
-To utilize Django's admin features, you must also register your models in admin.py within your app. This registration allows you to manage your models through the Django admin interface.
-
-## Project description
- 
-My project consists of three main apps: **About, Index y Reservation**.
-
-<img src="static/images/readme/about-page.png">
-
-The **About** and **Index** models are quite similar and can be defined more as content models, where the title, text, and images in each template can be altered from the superuser access. Their only difference is that the **About** app uses a function-based view because it wasn't planned to hold too much content.
-
-In contrast, the **Index** app utilizes a class-based view, allowing for extension, where each post functions as a whole. In the template, it loops through each created model, displaying one on one side and the other as a mirror image on the opposite side.
-
-<img src="static/images/readme/home-page-2.png">
-
-Both are entirely customizable from the admin page, and thanks to the **Sommernote** plugin, the displayed texts can be edited dynamically with greater ease.
-
-The **Reservation** app, in contrast, is the one that holds most of the project's functionality. It consists of two main models: the **ReservationContent** class, which is similar to the other two mentioned earlier and serves solely to display content, and the **ReservationRequest**, which provides the necessary fields for authentication and the ability to perform CRUD operations (Create, Read, Update, Delete) on reservation requests.
-
-<img src="static/images/readme/sign-in.png">
 
 The approval of the reservation is made by the admin in the adminpage by the checklist approved model field and it shows the reservation now without the fade class. The metadata in the **ReservationRequest** model gives all the neccesary information to contact the client back and to schedule the requested datetime.
 
