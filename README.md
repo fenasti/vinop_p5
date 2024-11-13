@@ -6,40 +6,59 @@ Visit the deployed site: https://vinop-p5-65ef4c64b7a7.herokuapp.com/
 
 ## Introduction
 
-To begin the presentation of this project, I will take the liberty of sharing a bit about my life first. I am a cook; that has been my profession for at least the last 10 years of my life. It's quite far from coding, but both have something in common: they are great tools for building things.
+As a wine lover myself, I’m always eager to discover unique wines beyond the typical offerings in conventional stores, maby from small vineyards or hidden regions. A platform that connects this 2 sides, passionate wine lovers and rare vineyards would be a valuable addition to the wine community. This vision inspired me to create this project as if I were building it for myself and others who share this passion for discovering exceptional wines.
 
-I can no longer keep working in a kitchen, so I had to seek a different path. I never got to have my own restaurant; perhaps in the future it will exist physically, but for now, you can visit it online.
-
-The development of this project could be said to have started five months ago with the first project (link: https://fenasti.github.io/Catering/index.html). After developing the website for some clients with a catering project called Flamingo, we can see that the business has prospered, and they have been able to move to their own permanent location.
-
-Logically, this new business needs a rebranding and to refresh its concept for this new stage.
+This project envisions an e-commerce platform tailored for a B2C audience, designed to foster a community of wine lovers and enthusiasts. By offering a seamless, user-friendly experience, our online wine shop enables customers to quickly find and purchase niche wines with ease. The platform’s streamlined UX prioritizes speed and simplicity, allowing users to discover, select, and order their favorite wines in just a few clicks. Beyond sales, our goal is to build a community around wine culture—sharing knowledge, insights, and stories that connect each customer to the wines they enjoy. This blend of efficiency and cultural engagement sets our shop apart, making it a destination not just for buying, but for belonging.
 
 ## Development
 
 ### Proposal
 
-The logo and the playful essence of its presentation would be preserved, focusing on a pink inspired by the color of the flamingo. The color palette would be chosen based on the same color from the logo (#E94578), a bright pink that evokes the vibrant colors of summer.
+I initially entered the wine color into a palette mixer software, which revealed a light blue shade that paired beautifully with the default black and white planned for the project. The combination of red, white, and blue immediately evoked the colors of the French flag, a well-known symbol of a prominent wine-producing country. This led to the decision to use a blue-focused background image on the homepage.
 
-In search of a minimalist palette, a complementary color generator was asked to provide a color that would play with pink, black, and white. The color it generated (#33202A) was a perfect purple to add a touch of sobriety to the strong pink, which suggests the opposite.
+Thus, the choice for a homepage background became clear: a blue-focused image that aligns beautifully with the black and white design elements, creating an ambiance that is both visually cohesive and culturally resonant. This color scheme not only grounds the site in elegance but also gives visitors an intuitive association with the tradition and quality embedded in the wine world.
 
-<img src="static/images/readme/Colors.png">
+<img src="static/readme/color-pallete.png">
 
-The project began with the ideation phase, during which I outlined on paper the essential components that should be included.
+The initial stage of planning the project was done on paper and divided into phases. While this layout was not the final design, it served as the proposed blueprint for the entire project interface, and how I tracked progress during development.
 
-- A base.html template with a nav-bar and a footer
-- A Home/Index template as the homepage.
-- Reservations app and template with a form to request a reservation.
-- An about.html where is some information of the restaurant.
-- Access to a web version of the menu.
+#### 1. Define Models for Key Entities
+The first step is to identify and define the key data entities necessary for the e-commerce app:
 
-<img src="static/images/readme/home-page.png">
+- **Wine Model:** This model will represent each wine product, with attributes such as name, description, type, price, image and any other relevant information.
+- **Subscription Model (not fully implemented):** This model will manage wine subscription options, including subscription frequency (monthly, quarterly), price, and access to a newsletter with special offers.
+- **Order Model:** Used for managing customer orders, including fields for order items, total price and payment details.
+- **Customer Model (User Profile):** Extend the Django User model with a OneToOneField to include additional customer information, such as address, subscription status, and preferences.
 
-I decided to separate it in 3 main url link paths and to provide the menu as a donwload pdf link also in the nav-bar.
-As the Signup, Signin and Logout pages and all the client user functions would be exclusive related to the Reservation view, i solved to blend and display all together in the same place with conditional URL paths.
+#### 2. User Authentication and Subscriptions
+
+- **User Registration and Authentication:** Implement `django-allauth` to handle user registration, login, and password management, providing a smooth authentication process for customers.
+- **Subscription Management (not implemented):** 
+    - Provide customers with the option to subscribe to curated wine selections at regular intervals.
+    - Allow users to select, manage, and modify their subscription plans through dedicated views.
+    - Integrate recurring payments via payment gateways with Stripe to automate the subscription billing process.
+
+#### 3. E-commerce Functionality
+
+- **Product Catalog:**
+    - Create views for listing available wines and a detailed view for each product.
+    - Implement filtering options (e.g., wine type, region) to help users browse and discover wines according to their preferences.
+- **Shopping Cart:**
+    - Enable users to add wines to their cart, adjust quantities, and view the subtotal of their order.
+    - Provide a straightforward way for users to proceed to checkout and complete their purchase.
+- **Checkout and Payments:**
+    - Integrate a payment gateway (Stripe) for processing payments securely.
+    - Upon successful payment, create an Order instance and notify the system of the successful transaction.
+
+#### 4. Order Fulfillment and Notifications
+
+- **Order Tracking:** Allow users to view their order history and manage their account preferences.
+- **Email Notifications:** Implement automatic email notifications for order confirmations.
+- **Delivery Information:** Collect and store delivery addresses, allowing customers to track their orders.
 
 ### Agile
 
-First is to create the repository of the project using the code-institute template provided. Creation of the Project instance and connect it to the project repository. Using Agile to separate themain functions in the most basic tasks to build the apps with the issues User Story template that was was previous created, and display it in the Issues board separating them in All, In Progress, Done and Not Implemented for the functions that were not possible to add to the project because of lack of time or current experience.
+
 
 https://github.com/users/fenasti/projects/2
 
