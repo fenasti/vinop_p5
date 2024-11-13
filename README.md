@@ -197,6 +197,8 @@ A custom error handler is implemented for all errors recognized by Django, ensur
 
 ### Database
 
+I was lucky enough that after a while of searching the web, I found a 10-year-old GitHub repository that contained a wine JSON file with most of the common fields, as well as a media folder with their respective pictures. The only thing needed was some editing in the JSON file to make it valid as a fixtures database file.
+
 All database-related media and static files are stored and managed in an AWS S3 bucket. This setup provides reliable, long-term access to the files, ensuring they are securely hosted and easily accessible for the application.
 
 ### Main packages in the requirements.txt file
@@ -336,7 +338,18 @@ The implementation of SEO was foundational to the creation of this project. Thro
    - **Moderate Budget**: Use targeted ads on Instagram and Facebook. Run seasonal campaigns.
    - **Higher Budget**: Consider Google Ads for keywords like “wine subscription” or “unique wines delivered.” Invest in high-quality video content or branded collaborations.
 
+### Facebook page 
+
+link: https://www.facebook.com/profile.php?id=61568340493717
+
+<img src="static/readme/face1.png">
+<img src="static/readme/face2.png">
+
+
 ## Credits
+
+- https://github.com/hollyschinsky/angular-cellar-basic
+For its usefull wine database.
 
 I reused some code snipets of Boutique-Ado and my previous project Flamingo Terrace.
 
