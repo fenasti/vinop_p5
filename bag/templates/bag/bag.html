@@ -39,7 +39,7 @@
                             {% for item in bag_items %}
                                 <tr>
                                     <td class="p-3 w-25">
-                                        {% if item.product.image %}
+                                        {% if item.wine.picture %}
                                             <img class ="w-100" src="{{ item.wine.picture.url }}" alt="{{ item.wine.name }}">
                                         {% else %}
                                             <img class="w-100" src="{{ MEDIA_URL }}generic.jpg" alt="{{ item.wine.name }}">
@@ -152,4 +152,5 @@
         });
     });
 </script>
+
 {% endblock %}

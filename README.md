@@ -144,6 +144,7 @@ Displays all wines in the database, with sorting functionality and the ability t
 ### Wine details
 
 <img src="static/readme/wine-details.png">
+<img src="static/readme/mobile-nav.png">
 
 Renders the specific wine selected by clicking the image, showing more details, a description, and the option to add it to the bag.
 
@@ -151,6 +152,22 @@ Renders the specific wine selected by clicking the image, showing more details, 
 
 <img src="static/readme/subscription-success.png">
 
+Shows a subscription success page after submiting the form outlining the benefits of subscribing, and automatically sends a confirmation email to the provided address.
+
+### Checkout
+
+<img src="static/readme/checkout.png">
+<img src="static/readme/checkout-success.png">
+
+The checkout page is accessed from the bag contents and provides all the necessary functionalities for a quick payment via Stripe. Upon completion, it generates the order, associates it with the user profile (if available), and stores it in the database. Additionally, a confirmation email is automatically sent to the client.
+
+### Footer
+
+<img src="static/readme/subscription-success.png">
+
+### Profile
+
+<img src="static/readme/subscription-success.png">
 
 
 
