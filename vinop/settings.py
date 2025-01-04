@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
     'vinop-p5-65ef4c64b7a7.herokuapp.com',
     'localhost',
     '8000-fenasti-vinopp5-a2z2rrf8wxo.ws.codeinstitute-ide.net',
+    '8000-fenasti-vinopp5-w1jqfq1kg7h.ws.codeinstitute-ide.net',
 ]
 
 
