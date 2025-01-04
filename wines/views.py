@@ -5,6 +5,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Wine
+from reviews.models import Review
 from .forms import WineForm
 
 # Create your views here.
@@ -45,12 +46,14 @@ def all_wines(request):
     return render(request, 'wines/wines.html', context)
 
 def wine_detail(request, wine_id):
-    """ A view to show wines details """
+    """ A view to show wine details and reviews """
 
     wine = get_object_or_404(Wine, pk=wine_id)
+    reviews = Review.objects.filter(wine=wine).order_by('-created_at')  # Fetch reviews for this wine
 
     context = {
         'wine': wine,
+        'reviews': reviews,  # Add the reviews to the context
     }
 
     return render(request, 'wines/wine_detail.html', context)
