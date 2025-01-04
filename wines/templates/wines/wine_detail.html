@@ -87,19 +87,27 @@
                 </div>
             </div>
         </div>
-        <div class="reviews-section mt-5">
-            <h3>Reviews</h3>
-            <ul>
-                {% for review in wine.reviews.all %}
-                    <li>
-                        <strong>{{ review.user.username }}</strong> - {{ review.rating }} stars
-                        <p>{{ review.comment }}</p>
-                        <small>{{ review.created_at }}</small>
-                    </li>
-                {% endfor %}
-            </ul>
-            <a href="{% url 'add_review' wine.id %}">Add a Review</a>
+        <div class="reviews-section mt-5 bg-light border rounded p-4 shadow-sm">
+            <h3 class="border-bottom pb-2 mb-4 text-secondary">Reviews</h3>
+            {% if wine.reviews.all %}
+                <ul class="list-unstyled">
+                    {% for review in wine.reviews.all %}
+                        <li class="mb-4 p-3 bg-white border rounded shadow-sm">
+                            <strong class="d-block text-primary">{{ review.user.username }}</strong>
+                            <span class="text-warning">
+                                {{ review.render_stars|safe }}
+                            </span>
+                            <p class="mt-2 text-muted">{{ review.comment }}</p>
+                            <small class="text-secondary">{{ review.created_at }}</small>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="text-muted">No reviews yet. Be the first to add one!</p>
+            {% endif %}
+            <a href="{% url 'add_review' wine.id %}" class="btn btn-primary mt-3">Add a Review</a>
         </div>
+        
     </div>
 {% endblock %}
 
@@ -107,3 +115,5 @@
 {{ block.super }}
 {% include 'wines/includes/quantity_input_script.html' %}
 {% endblock %}
+
+
