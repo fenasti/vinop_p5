@@ -1,0 +1,9 @@
+<h1>{{ request.user.username }}'s Wishlist</h1>
+<ul>
+    {% for wine in wishlist.wines.all %}
+        <li>
+            {{ wine.name }}
+            <a href="{% url 'remove_from_wishlist' wine.id %}">Remove</a>
+        </li>
+    {% endfor %}
+</ul>
