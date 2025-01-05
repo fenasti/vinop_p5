@@ -97,7 +97,7 @@
                 <ul class="list-unstyled">
                     {% for review in wine.reviews.all %}
                         <li class="mb-4 p-3 bg-white border rounded shadow-sm">
-                            <strong class="d-block text-primary">{{ review.user.username }}</strong>
+                            <strong class="d-block text-primary text-capitalize">{{ review.user.username }}</strong>
                             <span class="text-warning">
                                 {{ review.render_stars|safe }}
                             </span>
