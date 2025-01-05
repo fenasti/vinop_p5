@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Wishlist
 from wines.models import Wine
@@ -13,6 +14,7 @@ def add_to_wishlist(request, wine_id):
     wishlist = request.user.wishlist
     wine = get_object_or_404(Wine, id=wine_id)
     wishlist.wines.add(wine)
+    messages.info(request, 'Successfully added wine to your Wishlist!')
     return redirect('wishlist_detail')
 
 @login_required
@@ -20,4 +22,5 @@ def remove_from_wishlist(request, wine_id):
     wishlist = request.user.wishlist
     wine = get_object_or_404(Wine, id=wine_id)
     wishlist.wines.remove(wine)
+    messages.info(request, 'Removed wine from your Wishlist!')
     return redirect('wishlist_detail')
