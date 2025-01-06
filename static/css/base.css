@@ -20,6 +20,7 @@ a {
 .content-wrapper {
     flex: 1; /* Expands to take up remaining space, pushing footer down */
 }
+
 /* footer */
 
 footer {
