@@ -111,18 +111,66 @@ https://github.com/users/fenasti/projects/4
 
 ## Features
 
-### App Structure Overview
+### Project Structure Overview
 
-| **App**             | **Purpose**                                           | **Core Models**              | **Key Functionalities**                         |
-|---------------------|-------------------------------------------------------|------------------------------|-------------------------------------------------|
-| **Wines**           | Manages wine catalog                                  | `Wine`          | Browse wines, filter by category or grape type  |
+| **App**          | **Purpose**      | **Core Models**        | **Key Functionalities**      |
+|------------------|------------------|-----------------------|-------------------------------|
+| **Wines**           | Manages wine catalog         | `Wine`        | Browse wines, filter by category or grape type  |
 | **Subscriptions**   | Handles subscription and storage emails     | `Subscription` | Subscription to newsletter      |
-| **Bag**            | Manages user cart functionality                       | N/A (session-based)          | Add to cart, view cart, update quantity         |
-| **Checkout**        | Processes payments and manages orders                 | `Order`, `OrderItem` | Order creation, payment processing            |
-| **Profiles**        | Manages user profiles and authentication              | `UserProfile`                | User registration, order history |
-| **Home**      | Renders home-page |  | Displays email subscription form and main content |
+| **Bag**        | Manages user cart functionality     | N/A (session-based)    | Add to cart, view cart, update quantity   |
+| **Checkout**    | Processes payments and manages orders   | `Order`, `OrderItem` | Order creation, payment processing  |
+| **Profiles**    | Manages user profiles and authentication   | `UserProfile`   | User registration, order history |
+| **Review**   | Allows users to leave reviews for wines   | `Review`  | Add reviews, view reviews, linked to logged-in users |
+| **Wishlist** | Enables users to save wines for future purchases  | `Wishlist` | Add to wishlist, view saved items, manage wishlist |
+| **Home**   | Renders home-page |  | Displays email subscription form and main content |
 
-### Home
+### Relational model structure
+
+For this section of the project, I will focus on the three custom models I designed for the application, their relationships with each other, and their integration with Django's user profile model, which provides the necessary user data for many of the app's functionalities.
+
+#### Wishlist Model
+
+| **Key**         | **Name** | **Type**        | **Description**      |
+|------------------|----------|-----------------------------------|------------------------------------------------------|
+| **Primary Key**  | ID       | AutoField      | Unique identifier for each wishlist entry.      |
+| **ForeignKey**   | User     | User model (OneToOneField)    | Links the wishlist to a specific user.       |
+| **ManyToMany**   | Wines    | ManyToManyField (Wine)      | Allows users to save multiple wines to their wishlist. |
+
+<img src="static/readme/Wishlist_diagram.png">
+
+#### Review Model
+
+| **Key**         | **Name**    | **Type**            | **Description**           |
+|------------------|-------------|-----------------------------------|------------------------------------------------------|
+| **Primary Key**  | ID          | AutoField       | Unique identifier for each review.                  |
+| **ForeignKey**   | User        | ForeignKey (User)         | Links the review to the user who created it.        |
+| **ForeignKey**   | Wine        | ForeignKey (Wine)          | Associates the review with a specific wine.         |
+| **Field**        | Rating      | PositiveIntegerField          | User-provided rating for the wine (e.g., 1-5).      |
+| **Field**        | Comment     | TextField                  | User's written feedback for the wine.               |
+| **Field**        | Created_at  | DateTimeField (auto_now_add=True)| Timestamp when the review was created.              |
+| **Field**        | Updated_at  | DateTimeField (auto_now=True)    | Timestamp when the review was last updated.         |
+
+<img src="static/readme/Review_diagram.png">
+
+#### Wine Model
+
+| **Key**         | **Name**      | **Type**          | **Description**           |
+|------------------|---------------|-----------------------------------|------------------------------------------------------|
+| **Primary Key**  | ID        | AutoField          | Unique identifier for each wine.            |
+| **Field**        | Name       | CharField (max_length=100)       | The name of the wine.                |
+| **Field**        | Year        | CharField (max_length=4)       | The production year of the wine.            |
+| **Field**        | Grapes      | CharField (max_length=100)     | The type of grapes used in the wine.          |
+| **Field**        | Country     | CharField (max_length=100)      | The country where the wine is produced.         |
+| **Field**        | Region      | CharField (max_length=100)      | The specific region of wine production.          |
+| **Field**        | Description   | TextField (blank=True)          | Additional details about the wine.              |
+| **Field**        | Price         | DecimalField (max_digits=6, decimal_places=2) | Price of the wine.                           |
+| **Field**        | Picture       | ImageField (blank=True, null=True)| Optional image of the wine bottle or label.         |
+
+<img src="static/readme/Wine_diagram.png">
+
+### Characteristics
+
+#### Home
 
 <img src="static/readme/mobile-home.png">
 
@@ -132,7 +180,7 @@ The homepage features the main image with a direct link to the full wine selecti
 
 <img src="static/readme/home-sub.png">
 
-### All wines
+#### All wines
 
 <img src="static/readme/all-wines.png">
 
@@ -141,34 +189,40 @@ Displays all wines in the database, with sorting functionality and the ability t
 <img src="static/readme/nav-sort.png">
 <img src="static/readme/search.png">
 
-### Wine details
+#### Wine details
 
 <img src="static/readme/wine-details.png">
 <img src="static/readme/mobile-nav.png">
 
-Renders the specific wine selected by clicking the image, showing more details, a description, and the option to add it to the bag.
+The Wine model captures essential details such as name, year, grapes, and price, offering a comprehensive overview of each wine. On the wine detail page, users can view these attributes, read a description, and see reviews from registered users. The page also allows adding the wine to the bag or wishlist. The presence of this attributes makes this template central to user engagement and decision-making.
 
-### Subscription
+#### Wishlist
+
+<img src="static/readme/wishlist_detail.png">
+<img src="static/readme/wishlist.png">
+
+The Wishlist model is designed to personalize the shopping experience by linking each user to a unique wishlist through a OneToOneField relationship. This ensures that every user has a dedicated wishlist without redundancy. The model also includes a ManyToManyField with the Wine model, allowing users to add multiple wines to their wishlist while enabling a single wine to appear on multiple users' lists. To streamline the creation process and ensure every user automatically has a wishlist upon registration, a signals.py file was implemented. This addition simplifies user experience management and eliminates the need for manual creation.
+
+#### Reviews
+
+<img src="static/readme/reviews.png">
+
+The Review model connects reviews to both users and wines through ForeignKeys. It includes a rating field in form of stars (from one to five) and a comment field for detailed feedback. This setup ensures user accountability while allowing wines to collect multiple reviews.
+
+#### Subscription
 
 <img src="static/readme/subscription-success.png">
 
 Shows a subscription success page after submiting the form outlining the benefits of subscribing, and automatically sends a confirmation email to the provided address.
 
-### Checkout
+#### Checkout
 
 <img src="static/readme/checkout.png">
 <img src="static/readme/checkout-success.png">
 
 The checkout page is accessed from the bag contents and provides all the necessary functionalities for a quick payment via Stripe. Upon completion, it generates the order, associates it with the user profile (if available), and stores it in the database. Additionally, a confirmation email is automatically sent to the client.
 
-### Footer
-
-<img src="static/readme/footer-home.png">
-<img src="static/readme/footer.png">
-
-Displays information about the associated partners, details from the owners, a link to the site’s policies, and links to social media.
-
-### Profile
+#### Profile
 
 On the profile page, the user can view their shipping details, details of previous orders, and access all sign-in, login, and other authentication features provided by django-allauth.
 
@@ -179,7 +233,14 @@ Additionally, if the user is authenticated as a superuser, they have direct acce
 
 <img src="static/readme/manager-crud.png">
 
-### Error
+#### Footer
+
+<img src="static/readme/footer-home.png">
+<img src="static/readme/footer.png">
+
+Displays information about the associated partners, details from the owners, a link to the site’s policies, and links to social media.
+
+#### Error
 
 A custom error handler is implemented for all errors recognized by Django, ensuring that the webpage doesn’t crash due to URL misdirection.
 
