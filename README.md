@@ -96,6 +96,20 @@ The first step is to identify and define the key data entities necessary for the
 - **User Profile:**  
   *"As a user i want to manage my account details and address for delivery purposes."*
 
+#### New User Stories after correction
+
+- **Add to Wishlist:**   
+  *"As a user, I want to add wines to my wishlist so I can save items for future consideration."*
+
+- **View Wishlist:**  
+  *"As a user, I want to view my wishlist so I can easily access the wines I am interested in."*
+
+- **Leave a Review:**  
+  *"As a user, I want to leave a review on wines I’ve purchased so I can share my experience with others."*
+
+- **Read Reviews:**  
+  *"As a user, I want to read reviews from other users so I can evaluate the quality and popularity of a wine."*
+
 #### **Admin-Centric Stories**
 
 - **Manage Products:**  
@@ -163,7 +177,7 @@ For this section of the project, I will focus on the three custom models I desig
 | **Field**        | Country     | CharField (max_length=100)      | The country where the wine is produced.         |
 | **Field**        | Region      | CharField (max_length=100)      | The specific region of wine production.          |
 | **Field**        | Description   | TextField (blank=True)          | Additional details about the wine.              |
-| **Field**        | Price         | DecimalField (max_digits=6, decimal_places=2) | Price of the wine.                           |
+| **Field**        | Price     | DecimalField (max_digits=6, decimal_places=2) | Price of the wine.                           |
 | **Field**        | Picture       | ImageField (blank=True, null=True)| Optional image of the wine bottle or label.         |
 
 <img src="static/readme/Wine_diagram.png">
@@ -293,6 +307,10 @@ During development, I implemented some aesthetic features that unexpectedly caus
 ### Bug 2
 
 The media files weren’t loading from AWS, so I reached out to my tutor for assistance. Together, we investigated and eventually realized the issue was due to incorrect permissions settings. I decided it would be best to start from scratch. During the process, I discovered that I hadn’t enabled public access for the created users, which was causing the problem.
+
+### Bug 3
+
+While integrating the wishlist app into the project, I encountered an issue where the wishlist template would not render. I later realized this was because the wishlist would only be created for users registered from that point onward, which didn’t happen with the previously created profiles. To resolve the issue, I decided to delete those profiles and reset the registered users' database, ensuring that no users lacked a wishlist and thereby preventing a broken page.
 
 ## Future implementations
 
